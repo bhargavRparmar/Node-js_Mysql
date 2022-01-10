@@ -151,11 +151,7 @@ exports.deleteAllPortfolio = async(req, res) => {
 
 exports.multiDeletePortfolio = async(req, res) => {
     try {
-        let { error } = multipleDeleteValidation(req.body);
-        if (error) {
-            return res.status(400).send(error.details[0].message);
-        } else {
-
+       
             const ids = req.body.ids;
 
 
@@ -168,7 +164,7 @@ exports.multiDeletePortfolio = async(req, res) => {
             })
 
 
-        }
+        
     } catch (err) {
         logger.error("err", err);
 
