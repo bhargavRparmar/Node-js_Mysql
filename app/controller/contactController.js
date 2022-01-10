@@ -121,10 +121,7 @@ exports.deleteAllContact = async(req, res) => {
 
 exports.multiDeleteContact = async(req, res) => {
     try {
-        let { error } = multipleDeleteValidation(req.body);
-        if (error) {
-            return res.status(400).send(error.details[0].message);
-        } else {
+      
 
             const ids = req.body.ids;
 
@@ -138,7 +135,7 @@ exports.multiDeleteContact = async(req, res) => {
             })
 
 
-        }
+        
     } catch (err) {
         logger.error("err", err);
         res.send(err);
